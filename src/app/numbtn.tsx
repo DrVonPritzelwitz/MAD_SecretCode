@@ -1,13 +1,16 @@
+import { useContext } from 'react';
 import { Pressable, StyleSheet, Text } from 'react-native';
+import { CodeContext } from './context';
 
 type BtnProps = {
 	number: string;
-	onPress: (num:string) => void;
 }
 
-export default function Numbtn({ number, onPress }: BtnProps) {
+export default function Numbtn({ number }: BtnProps) {
+	const { code, setCode } = useContext(CodeContext);
+	
 	return (
-		<Pressable style={styles.btn} onPress={ () => onPress(number) }>
+		<Pressable style={styles.btn} onPress={ () => setCode(code + number) }>
 			<Text style={styles.txt}> {number} </Text>
 		</Pressable>
 	)

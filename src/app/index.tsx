@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { CodeContext } from "./context";
 import Numpad from "./numpad";
 
 export default function Index() {
@@ -22,13 +23,15 @@ export default function Index() {
 	if (isCorrect) {
 		return (
 			<View style={styles.container}>
-				<Text style={ styles.txt }>YOU GOT IT!</Text>
+				<Text style={styles.txt}>YOU GOT IT!</Text>
 			</View>
 		)
 	} else {
 		return (
 			<View style={styles.container}>
-				<Numpad code={code} setCode={setCode}></Numpad>
+				<CodeContext value={{code, setCode}}>
+					<Numpad></Numpad>
+				</CodeContext>
 			</View>
 		);
 	}

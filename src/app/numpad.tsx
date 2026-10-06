@@ -1,40 +1,33 @@
-import { Dispatch, SetStateAction } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Display from './display';
 import Numbtn from './numbtn';
 
-type NumPadProps = {
-	code: string;
-	setCode: Dispatch<SetStateAction<string>>;
-}
-
-export default function Numpad({ code, setCode }: NumPadProps) {
-
+export default function Numpad() {
 	return (
 		<View style={styles.container}>
 
-			<Display code={code}></Display>
+			<Display></Display>
 
 			<View style={styles.row}>
-				<Numbtn number='1' onPress={(num) => setCode(code + num)} />
-				<Numbtn number='2' onPress={(num) => setCode(code + num)} />
-				<Numbtn number='3' onPress={(num) => setCode(code + num)} />
+				<Numbtn number='1'/>
+				<Numbtn number='2'/>
+				<Numbtn number='3'/>
 			</View>
 
 			<View style={styles.row}>
-				<Numbtn number='4' onPress={(num) => setCode(code + num)} />
-				<Numbtn number='5' onPress={(num) => setCode(code + num)} />
-				<Numbtn number='6' onPress={(num) => setCode(code + num)} />
+				<Numbtn number='4'/>
+				<Numbtn number='5'/>
+				<Numbtn number='6'/>
 			</View>
 
 			<View style={styles.row}>
-				<Numbtn number='7' onPress={(num) => setCode(code + num)} />
-				<Numbtn number='8' onPress={(num) => setCode(code + num)} />
-				<Numbtn number='9' onPress={(num) => setCode(code + num)} />
+				<Numbtn number='7'/>
+				<Numbtn number='8'/>
+				<Numbtn number='9'/>
 			</View>
 
 			<View style={styles.row}>
-				<Numbtn number='0' onPress={(num) => setCode(code + num)} />
+				<Numbtn number='0'/>
 			</View>
 
 		</View>

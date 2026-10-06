@@ -1,10 +1,10 @@
+import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
+import { CodeContext } from './context';
 
-type DisplayProps = {
-	code: String;
-}
 
-export default function Display({ code }: DisplayProps) {
+export default function Display() {
+	const { code } = useContext(CodeContext);
 
 	return (
 		<View style={styles.mainContainer}>
