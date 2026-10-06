@@ -2,11 +2,12 @@ import { Pressable, StyleSheet, Text } from 'react-native';
 
 type BtnProps = {
 	number: string;
+	onPress: (num:string) => void;
 }
 
-export default function Numbtn({ number }: BtnProps) {
+export default function Numbtn({ number, onPress }: BtnProps) {
 	return (
-		<Pressable style={styles.btn} onPress={() => { }}>
+		<Pressable style={styles.btn} onPress={ () => onPress(number) }>
 			<Text style={styles.txt}> {number} </Text>
 		</Pressable>
 	)

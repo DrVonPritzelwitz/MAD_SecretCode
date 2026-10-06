@@ -1,14 +1,17 @@
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View } from 'react-native';
 
-export default function Display() {
+type DisplayProps = {
+	code: String;
+}
 
+export default function Display({ code }: DisplayProps) {
 
 	return (
 		<View style={styles.mainContainer}>
-			<View style={[styles.dot, { backgroundColor: 'plum' }]}></View>
-			<View style={[styles.dot, { backgroundColor: 'white' }]}></View>
-			<View style={[styles.dot, { backgroundColor: 'white' }]}></View>
-			<View style={[styles.dot, { backgroundColor: 'white' }]}></View>
+			<View style={[styles.dot, { backgroundColor: code.length >= 1 ? 'plum' : 'white' }]}></View>
+			<View style={[styles.dot, { backgroundColor: code.length >= 2 ? 'plum' : 'white' }]}></View>
+			<View style={[styles.dot, { backgroundColor: code.length >= 3 ? 'plum' : 'white' }]}></View>
+			<View style={[styles.dot, { backgroundColor: code.length >= 4 ? 'plum' : 'white' }]}></View>
 		</View>
 	)
 }
